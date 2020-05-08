@@ -4,5 +4,6 @@ jobs:
     machine: true
     steps:
       - checkout
+      - run: docker pull vulnerables/web-dvwa
       - run: curl https://raw.githubusercontent.com/usr42/clair-container-scan/master/clair-container-scan.sh > clair.sh
       - run: sh clair.sh -p vulnerables/web-dvwa
