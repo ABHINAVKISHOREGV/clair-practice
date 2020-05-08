@@ -6,5 +6,4 @@ jobs:
       - checkout
       - run: docker pull vulnerables/web-dvwa #vulnerables/web-dvwa is a demo vulnerable image used for testing here
       - run: curl https://raw.githubusercontent.com/ABHINAVKISHOREGV/clair-practice/master/clair-scan.sh > clair.sh
-      - run: sh clair.sh -p vulnerables/web-dvwa > report.txt
-      - run: cat report.txt
+      - run: sh clair.sh -p vulnerables/web-dvwa
