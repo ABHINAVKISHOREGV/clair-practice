@@ -9,4 +9,5 @@ jobs:
       - run: echo "Trying out workspaces" > my_workspace/out
       - run: docker build -t abhinav-alpine:ci .
       - run: docker run -it -d  --name myalpine abhinav-alpine:ci sh
-      - run: curl -s https://raw.githubusercontent.com/usr42/clair-container-scan/master/clair-container-scan.sh | sh -s -p
+      - run: curl https://raw.githubusercontent.com/usr42/clair-container-scan/master/clair-container-scan.sh > clair.sh
+      - run: sh clair.sh -p
