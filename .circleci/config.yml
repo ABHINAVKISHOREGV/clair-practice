@@ -10,4 +10,4 @@ jobs:
       - run: docker build -t abhinav-alpine:ci .
       - run: docker run -it -d  --name myalpine abhinav-alpine:ci sh
       - run: curl https://raw.githubusercontent.com/usr42/clair-container-scan/master/clair-container-scan.sh > clair.sh
-      - run: sh clair.sh -p
+      - run: sh clair.sh -p abhinav-alpine:ci
