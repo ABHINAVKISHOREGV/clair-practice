@@ -55,7 +55,7 @@ if [ ! -f "docker-compose.yaml" ]; then
 fi
 
 [ "$PULL" = 1 ] && redirect_all docker-compose pull
-redirect_stderr docker-compose run --rm scanner "$@" > result.json
+redirect_stderr docker-compose run --rm scanner "$@" > /tmp/artifacts/result.json
 echo "code output is $?"
 redirect_all docker-compose down
 ret=0
