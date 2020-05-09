@@ -58,4 +58,5 @@ fi
 redirect_stderr docker-compose run --rm scanner "$@" > /tmp/artifacts/result.json
 echo "code output is $?"
 redirect_all docker-compose down
+python3 res.py > /tmp/artifacts/Report.md
 ret=0
