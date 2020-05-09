@@ -15,4 +15,4 @@ def write_json_file(filename):
     	print()
 if __name__ == "__main__":
     data=''
-    write_json_file(' /tmp/artifacts/result.json')
+    write_json_file('/tmp/artifacts/result.json')
