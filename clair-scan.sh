@@ -58,4 +58,5 @@ fi
 redirect_stderr docker-compose run --rm scanner "$@"
 ret=$?
 redirect_all docker-compose down
-exit $ret
+cat $ret > result.json
+
