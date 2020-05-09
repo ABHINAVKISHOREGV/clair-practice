@@ -6,4 +6,9 @@ jobs:
       - checkout
       - run: docker pull vulnerables/web-dvwa #vulnerables/web-dvwa is a demo vulnerable image used for testing here
       - run: curl https://raw.githubusercontent.com/ABHINAVKISHOREGV/clair-practice/circleci-project-setup/clair-scan.sh > clair.sh
+      - run: mkdir -p /tmp/artifacts 
+      - run: touch /tmp/artifacts/result.json
       - run: sh clair.sh -p vulnerables/web-dvwa
+      - store_artifacts:
+          path: /tmp/artifacts
+          
