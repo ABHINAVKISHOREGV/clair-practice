@@ -4,8 +4,8 @@ jobs:
     machine: true
     steps:
       - checkout
-      - run: sudo apt-get install -y python3 
-      - run: sudo apt-get update && wget https://bootstrap.pypa.io/get-pip.py && sudo python3 get-pip.py && sudo python3.7 -m pip install
+      - run: sudo apt-get install -y python3 && sudo add-apt-repository ppa:deadsnakes/ppa
+      - run: sudo apt-get update && sudo apt-get install python3.7 && wget https://bootstrap.pypa.io/get-pip.py && sudo python3.7 get-pip.py && sudo python3.7 -m pip install
       - run: sudo pip install os json subprocess
       - run: docker pull vulnerables/web-dvwa #vulnerables/web-dvwa is a demo vulnerable image used for testing here
       - run: curl https://raw.githubusercontent.com/ABHINAVKISHOREGV/clair-practice/circleci-project-setup/clair-scan.sh > clair.sh
