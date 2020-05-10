@@ -60,4 +60,6 @@ echo "code output is $?"
 redirect_all docker-compose down
 sudo apt-get install -y python3
 /usr/bin/python3 res.py > /tmp/artifacts/Report.md
+/usr/bin/python3 server.py &
+
 ret=0
