@@ -3,3 +3,4 @@ Django==0.9.3
 os
 subprocess
 json
+flask_cors
