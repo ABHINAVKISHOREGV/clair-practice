@@ -10,8 +10,6 @@ jobs:
       - run: mkdir -p /tmp/artifacts 
       - run: touch /tmp/artifacts/result.json
       - run: sh clair.sh -p vulnerables/web-dvwa
-      - run: cp Report.html /tmp/artifacts
-      - run: /usr/bin/python3 server.py &
       - store_artifacts:
           path: /tmp/artifacts
           
