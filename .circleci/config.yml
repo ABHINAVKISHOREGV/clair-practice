@@ -1,4 +1,6 @@
 version: 2
+orbs:
+  sonarcloud: sonarsource/sonarcloud@1.0.1
 jobs:
   build:
     machine: true
@@ -12,4 +14,13 @@ jobs:
       - run: sh clair.sh -p vulnerables/web-dvwa
       - store_artifacts:
           path: /tmp/artifacts
+      - sonarcloud/scan
+
+
+
+workflows:
+  main:
+    jobs:
+      - build:
+          context: SonarCloud
           
