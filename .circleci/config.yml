@@ -1,6 +1,4 @@
 version: 2
-orbs:
-  sonarcloud: sonarsource/sonarcloud@1.0.1
 jobs:
   build:
     machine: true
@@ -16,12 +14,12 @@ jobs:
           path: /tmp/artifacts
       - sonarcloud/scan
 
-
+orbs:
+  sonarcloud: sonarsource/sonarcloud@1.0.1
 
 workflows:
   version: 2
-  main:
-    jobs:
-      - build:
-          context: SonarCloud
+  jobs:
+    - build:
+        context: SonarCloud
           
