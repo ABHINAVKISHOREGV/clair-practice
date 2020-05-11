@@ -19,7 +19,8 @@ orbs:
 
 workflows:
   version: 2
-  jobs:
-    - build:
-        context: SonarCloud
+  main:
+    jobs:
+      - build:
+          context: SonarCloud
           
