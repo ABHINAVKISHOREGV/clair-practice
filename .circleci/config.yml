@@ -12,14 +12,4 @@ jobs:
       - run: sh clair.sh -p vulnerables/web-dvwa
       - store_artifacts:
           path: /tmp/artifacts
-      - sonarcloud/scan
-orbs:
-  sonarcloud: sonarsource/sonarcloud@1.0.1
 
-workflows:
-  version: 2
-  main:
-    jobs:
-      - build:
-          context: SonarCloud
-          
